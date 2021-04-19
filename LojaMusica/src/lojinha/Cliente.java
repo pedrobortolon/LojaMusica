@@ -55,12 +55,4 @@ public class Cliente extends Carrinho{
         return ("ID:" + ID + "\nnome: " + name + "\ntotal:" + total);
     }
 
-    public void addToCarrinho(Produto produto){
-        produtos.add(produto);
-    }
-
-    public void removeFromCarrinho(Produto produto){
-        produtos.remove(produto);
-    }
-
 }

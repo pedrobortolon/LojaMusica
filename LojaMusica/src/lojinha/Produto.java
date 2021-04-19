@@ -7,17 +7,23 @@ public class Produto {
     int ID;
     String name;
     String marca;
+    String desc;
     double preco;
     public static Vector<Produto> armazem;
+
+    public static Vector<Produto> getArmazem() {
+        return armazem;
+    }
 
     public Produto(){
         this.ID = ++nprodutos;
     }
 
-    public Produto(String name, String marca, double preco) {
+    public Produto(String name, String marca, String desc, double preco) {
         this.name = name;
         this.preco = preco;
         this.marca = marca;
+        this.desc = desc;
         this.ID = ++nprodutos;
         armazem.add(this);
     }
