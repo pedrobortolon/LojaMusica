@@ -1,16 +1,15 @@
 package vendas;
 
 import java.util.Vector;
-
 import produtos.Produto;
 
-public class Carrinho extends Produto{
-    Vector<Produto> produtos;
-    double total;
+public class Carrinho {
 
-    public void addProduto(Produto produto){
-        this.produtos.add(produto);
-        this.total += produto.getPreco();
+    double total;
+    Vector<Produto> produtos = new Vector<Produto>();
+
+    public Carrinho(){
+        this.total = 0.0;
     }
 
     public String toString(){
@@ -22,4 +21,17 @@ public class Carrinho extends Produto{
             System.out.println(produtos.get(i).toString());
         }
     }
+
+    public void addToCarrinho(Produto produto){
+        this.produtos.add(produto);
+        this.total += produto.getPreco();
+        Produto.removeProduto(produto);
+    }
+
+    public void removeFromCarrinho(Produto produto){
+        this.produtos.remove(produto);
+        Produto.addProduto(produto);
+    }
+
+
 }

@@ -1,17 +1,15 @@
 package vendas;
 
 import java.util.Vector;
-
+import vendas.Carrinho;
 import produtos.Produto;
 
-public class Cliente {
+public class Cliente extends Carrinho{
     
     static int nclientes = 0;
     int ID;
     String name;
-    Carrinho carrinho;
     double saldo;
-    double total;
 
 
     public Cliente(String name) {
@@ -58,11 +56,11 @@ public class Cliente {
     }
 
     public void addToCarrinho(Produto produto){
-        carrinho.produtos.add(produto);
+        produtos.add(produto);
     }
 
-    public void removeFromCarrinho(String produto){
-        carrinho.produtos.remove(produto);
+    public void removeFromCarrinho(Produto produto){
+        produtos.remove(produto);
     }
 
 }
